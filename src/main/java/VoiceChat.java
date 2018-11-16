@@ -28,7 +28,7 @@ public class VoiceChat extends ListenerAdapter {
         if (event.getChannelLeft().getParent().getId()
                 .equals(JsonIO.JSONReader("voice-category","config.json"))) {
             event.getMember().getGuild().getController().removeSingleRoleFromMember(member,voice).queue();
-        }
+        }//test
     }
 
 }
