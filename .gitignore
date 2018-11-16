@@ -4,3 +4,7 @@ client_secret.json
 .idea/
 gradle/
 .gradle/
+build.gradle
+gradlew
+gradlew.bat
+settings.gradle
