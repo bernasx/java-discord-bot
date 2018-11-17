@@ -6,6 +6,15 @@ import net.dv8tion.jda.core.events.guild.voice.GuildVoiceLeaveEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import net.dv8tion.jda.core.managers.GuildController;
 
+/*
+Adds a pre-existing voice role to a user that joins a voice channel in the mentioned category.
+
+Useful to give out for people who want to see a voice text channel to spam links while in voice-chat.
+
+ */
+
+
+//add voice role
 public class VoiceChat extends ListenerAdapter {
     @Override
     public void onGuildVoiceJoin(GuildVoiceJoinEvent event) {
@@ -18,6 +27,8 @@ public class VoiceChat extends ListenerAdapter {
             event.getMember().getGuild().getController().addSingleRoleToMember(member,voice).queue();
         }
     }
+
+    //removes voice role
     @Override
     public void onGuildVoiceLeave(GuildVoiceLeaveEvent event) {
 
