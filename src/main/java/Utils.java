@@ -112,7 +112,10 @@ public class Utils {
         event.getChannel().sendMessage(sb).queue();
     }
 
+    public static void convertcurrency(MessageReceivedEvent event) throws Exception{
+        currency.getcurrency(event);
 
+    }
 
 
 }
