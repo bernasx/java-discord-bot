@@ -75,6 +75,12 @@ public class AboutHelpList {
                 case "joke": listBuilder(event,"joke","Tells you a joke!",
                         Commands.prefix +"joke");
                     break;
+                case "convertcurrency": listBuilder(event,"convertcurrency","Converts currency1 to currency 2.",
+                        Commands.prefix +"convertcurrency 30 EUR USD");
+                    break;
+                case "listcurrency": listBuilder(event,"listcurrency","Lists all currency codes.",
+                        Commands.prefix +"listcurrency");
+                    break;
 
                 default: event.getChannel().sendMessage("That's not a command!").queue();
                     break;
@@ -97,6 +103,9 @@ public class AboutHelpList {
                         "\n **userinfo** - Gives you info about yourself."+
                         "\n **decide** - Decides for you!"+
                         "\n **joke** - Tells you a joke!"+
+                        "\n \n ----------**Conversion Commands**---------- \n"+
+                        "\n **convertcurrency** - Converts a currency to another."+
+                        "\n **listcurrency** - Lists all currency codes."+
                         "\n \n ----------**ADMIN/MOD ONLY**---------- \n"+
                         "\n **changeprefix** - Changes the prefix of the bot.")
                 .setColor(Color.cyan)

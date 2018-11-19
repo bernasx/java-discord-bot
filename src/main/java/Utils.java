@@ -112,10 +112,17 @@ public class Utils {
         event.getChannel().sendMessage(sb).queue();
     }
 
+    //converts currency 1 to currency 2 through a free API
     public static void convertcurrency(MessageReceivedEvent event) throws Exception{
-        currency.getcurrency(event);
+        Currency.getcurrency(event);
 
     }
+    //lists currency codes
+    public static void listcurrency(MessageReceivedEvent event) throws Exception{
+        Currency.currencyList(event);
+
+    }
+
 
 
 }
