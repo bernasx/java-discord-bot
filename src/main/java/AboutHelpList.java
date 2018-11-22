@@ -17,7 +17,7 @@ public class AboutHelpList {
                         "I can do a lot for you, but only y-you... \n" +
                         "*owo* \n")
                         .setThumbnail(botAvatar)
-                        .setFooter("TsundereBot v1.3", null)
+                        .setFooter("TsundereBot v1.5", null)
                         .setColor(Color.red)
                         .build())
                         .queue();
