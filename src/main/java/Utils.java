@@ -27,12 +27,10 @@ public class Utils {
                 .collect(Collectors.joining(" , "));
 
         if (content.isEmpty()){
-            event.getChannel().sendMessage("Ping someone to show their avatar b-baka!!").queue();
+            content = event.getMessage().getAuthor().getAvatarUrl();
         }
-        else{
-            event.getChannel().sendMessage(
-                    new EmbedBuilder().setImage(content).build()).queue();
-        }
+            event.getChannel().sendMessage(new EmbedBuilder().setImage(content).build()).queue();
+
     }
     //ping and pong commands
     public static void ping(MessageReceivedEvent event){
@@ -102,14 +100,15 @@ public class Utils {
     public static void joke(MessageReceivedEvent event)throws MalformedURLException, IOException, ParseException {
 
         JSONParser parser = new JSONParser();
-        URL url = new URL("https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke");
+        URL url = new URL("https://official-joke-api.appspot.com/random_joke");
         BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
         String jokeApi = in.readLine();
         JSONObject jokes = (JSONObject) parser.parse(jokeApi);
         StringBuilder sb = new StringBuilder();
         sb.append(jokes.get("setup")).append("\n" + jokes.get("punchline"));
-
         event.getChannel().sendMessage(sb).queue();
+        in.close();
+
     }
 
     //converts currency 1 to currency 2 through a free API
