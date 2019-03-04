@@ -35,7 +35,7 @@ public class Main extends ListenerAdapter {
          return;
         }
         else {
-            System.out.println("We received a message from " + event.getAuthor().getName() + ": " +
+            System.out.println("Channel: " + event.getTextChannel().getName() + " --- We received a message from " + event.getAuthor().getName() + ": " +
                     event.getMessage().getContentDisplay()); // log message to console
 
             Commands.commandList(event);

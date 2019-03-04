@@ -16,7 +16,6 @@ public class Commands {
     public static void commandList(MessageReceivedEvent event){
         //makes Utils class a reflectable class
         Class reflectUtilsClass = Utils.class;
-        Class reflectlolApiClass = RiotApi.class;
         //checks if a user is mentioning the bot alone, if yes it will send a message with the current prefix
         String content = event.getMessage().getMentionedUsers().stream().limit(1)
                 .map(u->u.getId()).collect(Collectors.joining());
@@ -42,18 +41,6 @@ public class Commands {
                         e.printStackTrace();
                     }
                 }
-            }
-        //uses java reflection to get method names from RiotApi class
-        Method[] classRiotApiMethods = reflectlolApiClass.getMethods();
-            for(Method method : classRiotApiMethods){
-                if( (prefix.toLowerCase() + "lol-" + method.getName()).equals(event.getMessage().getContentRaw().split(" ")[0].toLowerCase()))
-                    try {
-                        method.invoke(reflectlolApiClass,event);
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    } catch (InvocationTargetException e) {
-                        e.printStackTrace();
-                    }
             }
     }
 
