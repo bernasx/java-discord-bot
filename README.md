@@ -1,5 +1,5 @@
 # java-discord-bot
-A JDA Discord Bot.
+A JDA Discord Bot made for learning purposes. **No longer being maintained.**
 
 
 Add tokens.json and config.json for it to work.
